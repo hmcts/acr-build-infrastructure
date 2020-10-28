@@ -8,6 +8,16 @@ resource "azurerm_resource_group" "acr_resource_group" {
 }
 
 
+data "azuread_group" "acr" {
+  name = "DTS ACR Access Administrators"
+}
+
+resource "azurerm_role_assignment" "acr_access" {
+  scope = azurerm_resource_group.acr_resource_group.id
+  role_definition_name = "User Access Administrator"
+  principal_id = data.azuread_group.acr.object_id
+}
+
 #--------------------------------------------------------------
 # Public Azure Container Registry
 #--------------------------------------------------------------

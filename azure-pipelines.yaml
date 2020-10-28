@@ -1,12 +1,4 @@
 parameters:
-  - name: location
-    displayName: Location
-    type: string
-    default: 'UK South'
-    values:
-      - 'UK South'
-      - 'UK West'
-
   - name: env
     displayName: Environment
     type: string
@@ -33,19 +25,15 @@ variables:
     value: DTS-SHAREDSERVICES-${{ parameters.env }}
 
 stages:
-
   - stage: ACR
     displayName: 'Deploy Azure Container Registries'
-    variables:
-      armClientSecret: $[ stageDependencies.ReadKeyVault.ReadKeyVault.outputs['SetSubscriptionSP.ARM_CLIENT_SECRET'] ]
-      controlStorageAccount: $[ stageDependencies.ReadKeyVault.ReadKeyVault.outputs['SetControlVars.controlStorageAccount'] ]
     jobs:
       - job: DeployInfrastructure
         steps:
           - template: pipeline-steps/deploy-service.yaml
             parameters:
               environment: PROD
-              location: ${{ parameters.location }}
+              location: 'UK South'
               stack: 'acr'
               project: $(project)
               tfversion: $(tfversion)
