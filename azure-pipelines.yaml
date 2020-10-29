@@ -1,12 +1,4 @@
 parameters:
-  - name: location
-    displayName: Location
-    type: string
-    default: 'UK South'
-    values:
-      - 'UK South'
-      - 'UK West'
-
   - name: env
     displayName: Environment
     type: string
@@ -19,8 +11,6 @@ trigger:
   - none
 
 variables:
-  - name: gaServiceConnection
-    value: OPS-APPROVAL-GATE-${{ parameters.env }}-ENVS
   - name: tfversion
     value: 0.13.4
   # If another project comes along and wants to use the same pipeline file then make this a variable in the UI
@@ -30,22 +20,18 @@ variables:
     value: sds
   # same comment as above ^^
   - name: serviceConnection
-    value: DTS-SHAREDSERVICES-${{ parameters.env }}
+    value: OPS-APPROVAL-GATE-${{ parameters.env }}-ENVS
 
 stages:
-
   - stage: ACR
     displayName: 'Deploy Azure Container Registries'
-    variables:
-      armClientSecret: $[ stageDependencies.ReadKeyVault.ReadKeyVault.outputs['SetSubscriptionSP.ARM_CLIENT_SECRET'] ]
-      controlStorageAccount: $[ stageDependencies.ReadKeyVault.ReadKeyVault.outputs['SetControlVars.controlStorageAccount'] ]
     jobs:
       - job: DeployInfrastructure
         steps:
           - template: pipeline-steps/deploy-service.yaml
             parameters:
               environment: PROD
-              location: ${{ parameters.location }}
+              location: 'UK South'
               stack: 'acr'
               project: $(project)
               tfversion: $(tfversion)

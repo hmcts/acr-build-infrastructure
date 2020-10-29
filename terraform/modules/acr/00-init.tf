@@ -9,6 +9,10 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "2.31.1"
     }
+    azuread = {
+      source = "hashicorp/azuread"
+      version = "~> 0.10"
+    }
   }
 }
 
@@ -19,6 +23,8 @@ provider "azurerm" {
   features {}
   subscription_id = var.subscription_id
 }
+
+provider "azuread" {}
 
 provider "azurerm" {
   alias                      = "hmcts-control"
