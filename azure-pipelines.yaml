@@ -11,8 +11,6 @@ trigger:
   - none
 
 variables:
-  - name: gaServiceConnection
-    value: OPS-APPROVAL-GATE-${{ parameters.env }}-ENVS
   - name: tfversion
     value: 0.13.4
   # If another project comes along and wants to use the same pipeline file then make this a variable in the UI
@@ -22,7 +20,7 @@ variables:
     value: sds
   # same comment as above ^^
   - name: serviceConnection
-    value: DTS-SHAREDSERVICES-${{ parameters.env }}
+    value: OPS-APPROVAL-GATE-${{ parameters.env }}-ENVS
 
 stages:
   - stage: ACR
