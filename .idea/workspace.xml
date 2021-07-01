@@ -25,24 +25,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cac9ba9a-4f38-414f-9c7c-3af6e500e86e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.pre-commit-config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.terraform-version" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLDazure-pipelines.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/acr/main.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/acr/tags.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/environments/sbox/sbox.tfvars" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/azure-pipelines.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/azure-pipelines.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/environment/prod.tfvars" beforeDir="false" afterPath="$PROJECT_DIR$/environments/prod/prod.tfvars" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/modules/acr/00-init.tf" beforeDir="false" afterPath="$PROJECT_DIR$/components/acr/00-init.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/modules/acr/01-inputs-required.tf" beforeDir="false" afterPath="$PROJECT_DIR$/components/acr/01-inputs-required.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/modules/acr/02-inputs-defaults.tf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/modules/acr/10-container-registry.tf" beforeDir="false" afterPath="$PROJECT_DIR$/components/acr/10-container-registry.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,5 +84,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
