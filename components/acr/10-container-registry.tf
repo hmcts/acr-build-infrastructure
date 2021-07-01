@@ -32,7 +32,7 @@ resource "azurerm_container_registry" "container_registry_public" {
 #--------------------------------------------------------------
 
 resource "azurerm_container_registry" "container_registry_private" {
-  name                = var.env != "prod" ? "sdshmcts${var.env}" : "sdshmctsprivate"
+  name                = var.env != "prod" ? "sdshmctsprivate${var.env}" : "sdshmctsprivate"
   resource_group_name = azurerm_resource_group.acr_resource_group.name
   location            = var.location
   admin_enabled       = "true"
