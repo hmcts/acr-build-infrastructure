@@ -6,8 +6,6 @@ variable "project" {
 }
 variable "enable_debug" {}
 
-variable "subscription_id" {}
-
 variable "product" {}
 
 variable "builtFrom" {}
