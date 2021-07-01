@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "acr_resource_group" {
   location = var.location
-  name     = format("%s-acr-rg", var.project)
+  name     = "sds-acr-rg"
   tags     = module.tags.common_tags
 }
 data "azuread_group" "acr" {
@@ -18,7 +18,7 @@ resource "azurerm_role_assignment" "acr_access" {
 #--------------------------------------------------------------
 
 resource "azurerm_container_registry" "container_registry_public" {
-  name                = format("%shmctspublic", var.project)
+  name                = var.env == "prod" ? sdshmctspublic : "sdshmcts${var.env}"
   resource_group_name = azurerm_resource_group.acr_resource_group.name
   location            = var.location
   admin_enabled       = "true"
@@ -32,7 +32,7 @@ resource "azurerm_container_registry" "container_registry_public" {
 #--------------------------------------------------------------
 
 resource "azurerm_container_registry" "container_registry_private" {
-  name                = format("%shmctsprivate", var.project)
+  name                = var.env == "prod" ? sdshmctsprivate : "sdshmcts${var.env}"
   resource_group_name = azurerm_resource_group.acr_resource_group.name
   location            = var.location
   admin_enabled       = "true"
