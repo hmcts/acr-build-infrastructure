@@ -37,13 +37,9 @@
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_builtFrom"></a> [builtFrom](#input\_builtFrom) | n/a | `any` | n/a | yes |
-| <a name="input_control_vault"></a> [control\_vault](#input\_control\_vault) | n/a | `any` | n/a | yes |
-| <a name="input_enable_debug"></a> [enable\_debug](#input\_enable\_debug) | n/a | `any` | n/a | yes |
 | <a name="input_env"></a> [env](#input\_env) | General | `any` | n/a | yes |
 | <a name="input_location"></a> [location](#input\_location) | n/a | `string` | `"uksouth"` | no |
 | <a name="input_product"></a> [product](#input\_product) | n/a | `any` | n/a | yes |
-| <a name="input_project"></a> [project](#input\_project) | n/a | `string` | `"sds"` | no |
-| <a name="input_subscription_id"></a> [subscription\_id](#input\_subscription\_id) | n/a | `any` | n/a | yes |
 
 ## Outputs
 
