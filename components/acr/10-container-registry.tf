@@ -18,7 +18,7 @@ resource "azurerm_role_assignment" "acr_access" {
 #--------------------------------------------------------------
 
 resource "azurerm_container_registry" "container_registry_public" {
-  name                = var.env == "prod" ? sdshmctspublic : "sdshmcts${var.env}"
+  name                = var.env != "prod" ? "sdshmcts${var.env}" : "sdshmctspublic"
   resource_group_name = azurerm_resource_group.acr_resource_group.name
   location            = var.location
   admin_enabled       = "true"
