@@ -1,37 +1,85 @@
-parameters:
-  - name: env
-    displayName: Environment
-    type: string
-    default: 'PROD'
-    values:
-      - PROD
-
-name: HMCTS Shared Services AKS Azure Infrastructure Deployment Pipeline
+name: HMCTS Shared Services Azure ACR Infrastructure Deployment Pipeline
 trigger:
-  - none
+  batch: true
+  branches:
+    include:
+    - master
+
+resources:
+  repositories:
+  - repository: cnp-azuredevops-libraries
+    type: github
+    ref: refs/heads/master
+    name: hmcts/cnp-azuredevops-libraries
+    endpoint: 'hmcts'
+
+parameters:
+  - name: overrideAction
+    type: string
+    default: plan
+    values:
+    - plan
+    - apply
+    - destroy
+
+  - name: environment_components
+    type: object
+    default:
+    - deployment: 'sbox_acr'
+      environment: 'sbox'
+      component: 'acr'
+      service_connection: 'OPS-APPROVAL-GATE-SBOX-ENVS'
+      dependsOn: 'Precheck'
+      
+    - deployment: 'prod_acr'
+      environment: 'prod'
+      component: 'acr'
+      service_connection: 'OPS-APPROVAL-GATE-PROD-ENVS'
+      dependsOn: 'Precheck'
+
 
 variables:
-  - name: tfversion
-    value: 0.13.4
-  # If another project comes along and wants to use the same pipeline file then make this a variable in the UI
-  # but it might be better to template the pipeline more and have a different pipeline file
-  # so that someone doesn't pick the wrong var in the dropdown
-  - name: project
-    value: sds
-  # same comment as above ^^
-  - name: serviceConnection
-    value: OPS-APPROVAL-GATE-${{ parameters.env }}-ENVS
+  - name: timeoutInMinutes
+    value: 60
+  - name: agentPool
+    value: ubuntu-18.04
+  - name: build
+    value: $(Build.BuildNumber)
+  - name: product
+    value: sds-platform
+  - name: terraformInitSubscription
+    value: 04d27a32-7a07-48b3-95b8-3c8691e1a263
+  - template: vars/input-variables.yaml@cnp-azuredevops-libraries
 
 stages:
-  - stage: ACR
-    displayName: 'Deploy Azure Container Registries'
+  - stage: Precheck
     jobs:
-      - job: DeployInfrastructure
+      - job:
+        pool:
+          vmImage: ${{ variables.agentPool }}
+        timeoutInMinutes: ${{ variables.timeoutInMinutes }}
         steps:
-          - template: pipeline-steps/deploy-service.yaml
+          - template: steps/terraform-precheck.yaml@cnp-azuredevops-libraries
             parameters:
-              environment: PROD
-              location: 'UK South'
-              stack: 'acr'
-              project: $(project)
-              tfversion: $(tfversion)
+              keyvaultName: 'infra-vault-nonprod'
+              keyvaultSecret: 'azure-devops-token'
+              serviceConnection: 'DCD-CFT-Sandbox'
+
+
+  - ${{ each deployment in parameters.environment_components }}:
+    - stage: ${{ deployment.deployment }}
+      dependsOn: ${{ deployment.dependsOn }}
+      jobs:
+        - job: TerraformPlanApply
+          pool:
+            vmImage: ${{ variables.agentPool }}
+          timeoutInMinutes: ${{ variables.timeoutInMinutes }}
+          steps:
+          - template: steps/terraform.yaml@cnp-azuredevops-libraries
+            parameters:
+              overrideAction: ${{ parameters.overrideAction }}
+              environment: ${{ deployment.environment }}
+              component: ${{ deployment.component }}
+              serviceConnection: ${{ deployment.service_connection }}
+              terraformInitSubscription: ${{ variables.terraformInitSubscription }}
+              product: ${{ variables.product }}
