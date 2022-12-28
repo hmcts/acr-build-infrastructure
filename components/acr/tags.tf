@@ -3,5 +3,5 @@ module "tags" {
   environment  = lower(var.env)
   product      = var.product
   builtFrom    = var.builtFrom
-  expiresAfter = "3000-01-01"
+  expiresAfter = var.expiresAfter
 }
