@@ -1,4 +1,5 @@
 name: HMCTS Shared Services Azure ACR Infrastructure Deployment Pipeline
+
 trigger:
   batch: true
   branches:
