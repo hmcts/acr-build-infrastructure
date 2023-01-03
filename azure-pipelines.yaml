@@ -1,4 +1,5 @@
 name: HMCTS Shared Services Azure ACR Infrastructure Deployment Pipeline
+
 trigger:
   batch: true
   branches:
@@ -37,7 +38,6 @@ parameters:
       service_connection: 'OPS-APPROVAL-GATE-PROD-ENVS'
       dependsOn: 'Precheck'
 
-
 variables:
   - name: timeoutInMinutes
     value: 60
@@ -65,7 +65,6 @@ stages:
               keyvaultSecret: 'azure-devops-token'
               serviceConnection: 'DCD-CFT-Sandbox'
               overrideAction: ${{ parameters.overrideAction }}
-
 
   - ${{ each deployment in parameters.environment_components }}:
     - stage: ${{ deployment.deployment }}
