@@ -27,17 +27,3 @@ resource "azurerm_container_registry" "container_registry_public" {
 
 }
 
-#--------------------------------------------------------------
-# Private Azure Container Registry
-#--------------------------------------------------------------
-
-resource "azurerm_container_registry" "container_registry_private" {
-  name                = var.env != "prod" ? "sdshmctsprivate${var.env}" : "sdshmctsprivate"
-  resource_group_name = azurerm_resource_group.acr_resource_group.name
-  location            = var.location
-  admin_enabled       = "true"
-  sku                 = "Premium"
-
-  tags = module.tags.common_tags
-
-}
