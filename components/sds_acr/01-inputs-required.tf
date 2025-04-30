@@ -19,6 +19,16 @@ variable "sds_resource_group_name" {
   default     = "sds-acr-rg"
 }
 
+variable "sds_subscription_id" {
+  description = "Subscription ID for SDS"
+  type        = string
+}
+
+variable "sds_role_assignment_id" {
+  description = "Role assignment ID for SDS"
+  type        = string
+}
+
 variable "sds_acr" {
   description = "SDS ACR to be created"
   type = map(object({

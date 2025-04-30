@@ -8,6 +8,9 @@ cft_acr = {
   }
 }
 
+sds_subscription_id    = "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
+sds_role_assignment_id = "2e0570ec-8016-be2b-aee5-c7d6e84cd448"
+
 sds_acr = {
   sdshmctspublicsbox = {
     sku           = "Premium"

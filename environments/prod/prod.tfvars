@@ -14,6 +14,9 @@ cft_acr = {
   }
 }
 
+sds_subscription_id    = "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
+sds_role_assignment_id = "391f9391-0c81-8eec-751e-1c055a3d3474"
+
 sds_acr = {
   sdshmctspublic = {
     sku                    = "Premium"
