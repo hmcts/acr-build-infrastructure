@@ -59,5 +59,5 @@ import {
   for_each = { for key, value in local.import_map : key => value if var.env == "prod" }
 
   to = data.azuread_group.acr
-  id = "/subscriptions/${var.cft_subscription_id}/resourceGroups/${var.cft_resource_group_name}/providers/Microsoft.Authorization/roleAssignments/${var.cft_role_assignment_id}"
+  id = "/subscriptions/${var.cft_subscription_id}/resourceGroups/${var.cft_resource_group_name}/providers/Microsoft.Authorization/roleAssignments/d79932bc-2f3b-49ca-b975-f36cf806e912"
 }
