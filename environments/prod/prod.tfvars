@@ -3,8 +3,9 @@ cft_resource_group_name = "rpe-acr-prod-rg"
 
 cft_acr = {
   hmctspublic = {
-    sku           = "Premium"
-    admin_enabled = true
+    sku                    = "Premium"
+    admin_enabled          = true
+    anonymous_pull_enabled = true
   }
 
   hmctsprivate = {
