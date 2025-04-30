@@ -50,6 +50,8 @@ import {
   id = "/subscriptions/${var.cft_subscription_id}/resourceGroups/${var.cft_resource_group_name}"
 }
 
+# Hack to get the import to run only in prod
+# Will be removing all this after the import is done
 locals {
   import_map = {
     key = "value"
