@@ -26,7 +26,8 @@ variable "cft_subscription_id" {
 variable "cft_acr" {
   description = "CFT ACR to be created"
   type = map(object({
-    sku           = string
-    admin_enabled = bool
+    sku                    = string
+    admin_enabled          = bool
+    anonymous_pull_enabled = optional(bool, false)
   }))
 }
