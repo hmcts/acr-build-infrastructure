@@ -23,6 +23,11 @@ variable "cft_subscription_id" {
   type        = string
 }
 
+variable "cft_role_assignment_id" {
+  description = "Role assignment ID"
+  type        = string
+}
+
 variable "cft_acr" {
   description = "CFT ACR to be created"
   type = map(object({

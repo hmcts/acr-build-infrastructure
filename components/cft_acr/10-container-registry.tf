@@ -48,3 +48,16 @@ import {
   to = azurerm_resource_group.cft_acr_resource_group
   id = "/subscriptions/${var.cft_subscription_id}/resourceGroups/${var.cft_resource_group_name}"
 }
+
+local {
+  import_map = {
+    key = "value"
+  }
+}
+
+import {
+  for_each = { for key, value in local.import_map : key => value if var.env == "prod" }
+
+  to = data.azuread_group.acr
+  id = "/subscriptions/${var.cft_subscription_id}/resourceGroups/${var.cft_resource_group_name}/providers/Microsoft.Authorization/roleAssignments/${var.cft_role_assignment_id}"
+}

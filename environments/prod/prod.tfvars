@@ -1,4 +1,5 @@
 cft_subscription_id     = "8999dec3-0104-4a27-94ee-6588559729d1"
+cft_role_assignment_id  = "d79932bc-2f3b-49ca-b975-f36cf806e912"
 cft_resource_group_name = "rpe-acr-prod-rg"
 
 cft_acr = {
