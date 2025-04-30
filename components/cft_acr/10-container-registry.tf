@@ -49,7 +49,7 @@ import {
   id = "/subscriptions/${var.cft_subscription_id}/resourceGroups/${var.cft_resource_group_name}"
 }
 
-local {
+locals {
   import_map = {
     key = "value"
   }
