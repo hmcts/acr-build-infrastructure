@@ -18,6 +18,11 @@ variable "cft_resource_group_name" {
   type        = string
 }
 
+variable "cft_subscription_id" {
+  description = "Subscription ID"
+  type        = string
+}
+
 variable "cft_acr" {
   description = "CFT ACR to be created"
   type = map(object({
