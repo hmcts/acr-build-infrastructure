@@ -42,3 +42,8 @@ import {
   to = azurerm_container_registry.container_registry[each.key]
   id = "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-acr-rg/providers/Microsoft.ContainerRegistry/registries/${each.key}"
 }
+
+import {
+  to = azurerm_resource_group.cft_acr_resource_group
+  id = "/subscriptions/${var.cft_subscription_id}/resourceGroups/${var.cft_resource_group_name}"
+}
