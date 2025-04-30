@@ -30,28 +30,28 @@ parameters:
         environment: "sbox"
         component: "sds_acr"
         service_connection: "OPS-APPROVAL-GATE-SBOX-ENVS"
-        product: "sds_platform"
+        product: "sds-platform"
         dependsOn: "Precheck"
 
       - deployment: "cft_sbox_acr"
         environment: "sbox"
         component: "cft_acr"
         service_connection: "OPS-APPROVAL-GATE-SBOX-ENVS"
-        product: "cft_platform"
+        product: "cft-platform"
         dependsOn: "Precheck"
 
       - deployment: "sds_prod_acr"
         environment: "prod"
         component: "sds_acr"
         service_connection: "OPS-APPROVAL-GATE-PROD-ENVS"
-        product: "sds_platform"
+        product: "sds-platform"
         dependsOn: "precheck"
 
       - deployment: "cft_prod_acr"
         environment: "prod"
         component: "cft_acr"
         service_connection: "OPS-APPROVAL-GATE-PROD-ENVS"
-        product: "cft_platform"
+        product: "cft-platform"
         dependsOn: "precheck"
 
 variables:
