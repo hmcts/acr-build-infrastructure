@@ -28,3 +28,17 @@ resource "azurerm_container_registry" "container_registry" {
   tags                = module.tags.common_tags
 }
 
+
+import {
+  for_each = { for key, value in var.cft_acr : key => value if var.env == "prod" }
+
+  to = azurerm_container_registry.container_registry[each.key]
+  id = "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1/resourceGroups/rpe-acr-prod-rg/providers/Microsoft.ContainerRegistry/registries/${each.key}"
+}
+
+import {
+  for_each = { for key, value in var.cft_acr : key => value if var.env == "sbox" }
+
+  to = azurerm_container_registry.container_registry[each.key]
+  id = "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-acr-rg/providers/Microsoft.ContainerRegistry/registries/${each.key}"
+}
