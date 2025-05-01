@@ -24,11 +24,6 @@ variable "sds_subscription_id" {
   type        = string
 }
 
-variable "sds_role_assignment_id" {
-  description = "Role assignment ID for SDS"
-  type        = string
-}
-
 variable "sds_acr" {
   description = "SDS ACR to be created"
   type = map(object({
