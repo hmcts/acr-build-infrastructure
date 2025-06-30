@@ -34,9 +34,9 @@ locals {
   acr_replications = flatten([
     for acr_name, acr in var.cft_acr : [
       for idx, replica in try(acr.geo_replication_locations, []) : {
-        acr_name = acr_name
-        idx      = idx
-        location = replica.location
+        acr_name                = acr_name
+        idx                     = idx
+        location                = replica.location
         zone_redundancy_enabled = try(replica.zone_redundancy_enabled, null)
       }
     ]
