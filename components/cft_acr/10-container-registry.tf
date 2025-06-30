@@ -30,8 +30,8 @@ resource "azurerm_container_registry" "container_registry" {
   tags                     = module.tags.common_tags
 
   geo_replication_locations {
-    location                  = "ukwest"
-    zone_redundancy_enabled   = false
+    location                  = each.value.location
+    zone_redundancy_enabled   = each.value.zone_redundancy_enabled
     tags                      = module.tags.common_tags
   }
 }
