@@ -24,34 +24,14 @@ resource "azurerm_container_registry" "container_registry" {
   resource_group_name      = azurerm_resource_group.cft_acr_resource_group.name
   location                 = var.location
   admin_enabled            = each.value.admin_enabled
-  anonymous_pull_enabled   = try(each.value.anonymous_pull_enabled, null)
+  anonymous_pull_enabled   = each.value.anonymous_pull_enabled
   sku                      = each.value.sku
   retention_policy_in_days = 1
   tags                     = module.tags.common_tags
-}
 
-locals {
-  acr_replications = flatten([
-    for acr_name, acr in var.cft_acr : [
-      for idx, replica in try(acr.geo_replication_locations, []) : {
-        acr_name                = acr_name
-        idx                     = idx
-        location                = replica.location
-        zone_redundancy_enabled = try(replica.zone_redundancy_enabled, null)
-      }
-    ]
-  ])
-}
-
-resource "azurerm_container_registry_replication" "replica" {
-  for_each = {
-    for r in local.acr_replications : "${r.acr_name}-${r.location}" => r
+  geo_replication_locations {
+    location                  = "ukwest"
+    zone_redundancy_enabled   = false
+    tags                      = module.tags.common_tags
   }
-
-  name                    = "${each.value.acr_name}-replica-${each.value.location}"
-  location                = each.value.location
-  resource_group_name     = azurerm_resource_group.cft_acr_resource_group.name
-  registry_name           = azurerm_container_registry.container_registry[each.value.acr_name].name
-  zone_redundancy_enabled = each.value.zone_redundancy_enabled
-  tags                    = module.tags.common_tags
 }
