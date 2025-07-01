@@ -29,8 +29,8 @@ resource "azurerm_container_registry" "container_registry" {
   retention_policy_in_days = 1
   tags                     = module.tags.common_tags
   georeplications {
-    location                = "ukwest"
-    zone_redundancy_enabled = "false"
+    location                = each.value.location
+    zone_redundancy_enabled = each.value.zone_redundancy_enabled
     tags                    = module.tags.common_tags
   }
 }
