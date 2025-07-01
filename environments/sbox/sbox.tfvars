@@ -7,7 +7,7 @@ cft_acr = {
     admin_enabled = true
     georeplications = {
       location                = "ukwest"
-      zone_redundancy_enabled = true
+      zone_redundancy_enabled = "true"
     }
   }
 }
