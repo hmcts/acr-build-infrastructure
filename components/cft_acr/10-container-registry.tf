@@ -33,9 +33,4 @@ resource "azurerm_container_registry" "container_registry" {
     zone_redundancy_enabled = "false"
     tags                    = module.tags.common_tags
   }
-  georeplications {
-    location                = "uksouth"
-    zone_redundancy_enabled = "false"
-    tags                    = module.tags.common_tags
-  }
 }
