@@ -5,11 +5,10 @@ cft_acr = {
   hmctssandbox = {
     sku           = "Premium"
     admin_enabled = true
-    georeplications 
-      {
-        location                = "ukwest"
-        zone_redundancy_enabled = false
-      }
+    georeplications = {
+      location                = "ukwest"
+      zone_redundancy_enabled = false
+    }
   }
 }
 
