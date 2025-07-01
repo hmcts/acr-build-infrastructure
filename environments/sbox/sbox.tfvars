@@ -3,8 +3,8 @@ cft_resource_group_name = "cnp-acr-rg"
 
 cft_acr = {
   hmctssandbox = {
-    sku                     = "Premium"
-    admin_enabled           = true
+    sku           = "Premium"
+    admin_enabled = true
     geo_replication_locations = [
       {
         location                = "ukwest"
