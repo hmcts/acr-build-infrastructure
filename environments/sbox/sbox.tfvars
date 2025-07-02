@@ -20,10 +20,6 @@ sds_acr = {
   sdshmctspublicsbox = {
     sku           = "Premium"
     admin_enabled = true
-    georeplications = {
-      location                = "ukwest"
-      zone_redundancy_enabled = "true"
-    }
   }
 }
 
