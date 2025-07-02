@@ -24,7 +24,7 @@ resource "azurerm_container_registry" "container_registry" {
   resource_group_name      = azurerm_resource_group.cft_acr_resource_group.name
   location                 = var.location
   admin_enabled            = each.value.admin_enabled
-  anonymous_pull_enabled   = each.value.anonymous_pull_enabled
+  anonymous_pull_enabled   = try(each.value.anonymous_pull_enabled, null)
   sku                      = each.value.sku
   retention_policy_in_days = 1
   tags                     = module.tags.common_tags
