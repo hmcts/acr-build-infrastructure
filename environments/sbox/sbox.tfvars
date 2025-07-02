@@ -16,6 +16,8 @@ sds_acr = {
   sdshmctspublicsbox = {
     sku           = "Premium"
     admin_enabled = true
+    location                = "ukwest"
+    zone_redundancy_enabled = "false"
   }
 }
 
