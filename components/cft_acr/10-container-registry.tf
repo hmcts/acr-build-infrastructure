@@ -28,29 +28,9 @@ resource "azurerm_container_registry" "container_registry" {
   sku                      = each.value.sku
   retention_policy_in_days = 1
   tags                     = module.tags.common_tags
-}
-
-locals {
-  acr_replications = flatten([
-    for acr_name, acr in var.cft_acr : [
-      for replica in try(acr.geo_replication_locations, []) : {
-        acr_name                = acr_name
-        location                = replica.location
-        zone_redundancy_enabled = try(replica.zone_redundancy_enabled, null)
-      }
-    ]
-  ])
-}
-
-resource "azurerm_container_registry_replication" "replica" {
-  for_each = {
-    for r in local.acr_replications : "${r.acr_name}-${r.location}" => r
+  georeplications {
+    location                = "ukwest"
+    zone_redundancy_enabled = false
+    tags                    = {}
   }
-
-  name                    = "${each.value.acr_name}-replica-${each.value.location}"
-  location                = each.value.location
-  resource_group_name     = azurerm_resource_group.cft_acr_resource_group.name
-  registry_name           = azurerm_container_registry.container_registry[each.value.acr_name].name
-  zone_redundancy_enabled = each.value.zone_redundancy_enabled
-  tags                    = module.tags.common_tags
 }
