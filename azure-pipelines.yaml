@@ -89,6 +89,16 @@ stages:
               vmImage: ${{ variables.agentPool }}
             timeoutInMinutes: ${{ variables.timeoutInMinutes }}
             steps:
+              - script: |
+                  echo "Cleaning .terraform directory..."
+                  rm -rf .terraform
+                displayName: 'Clean Terraform cache'
+
+              - script: |
+                  echo "Running terraform init -upgrade..."
+                  terraform init -upgrade
+                displayName: 'Terraform Init (Upgrade Providers)'
+
               - template: steps/terraform.yaml@cnp-azuredevops-libraries
                 parameters:
                   overrideAction: ${{ parameters.overrideAction }}
