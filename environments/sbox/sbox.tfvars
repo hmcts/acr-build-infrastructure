@@ -9,6 +9,10 @@ cft_acr = {
       {
         location                = "ukwest"
         zone_redundancy_enabled = true
+      },
+      {
+        location                = "uksouth"
+        zone_redundancy_enabled = true
       }
     ]
   }
