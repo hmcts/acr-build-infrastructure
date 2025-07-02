@@ -89,6 +89,10 @@ stages:
               vmImage: ${{ variables.agentPool }}
             timeoutInMinutes: ${{ variables.timeoutInMinutes }}
             steps:
+              - task: UseTerraform@0
+                inputs:
+                  terraformVersion: '1.6.6'
+                displayName: 'Install Terraform'
               - script: |
                   echo "Cleaning .terraform directory..."
                   rm -rf .terraform
