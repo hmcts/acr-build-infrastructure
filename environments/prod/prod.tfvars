@@ -8,8 +8,12 @@ cft_acr = {
     anonymous_pull_enabled = true
     georeplications = [
       {
+        location                = "uksouth"
+        zone_redundancy_enabled = true
+      },
+      {
         location                = "ukwest"
-        zone_redundancy_enabled = false
+        zone_redundancy_enabled = true
       }
     ]
   }
@@ -20,8 +24,12 @@ hmctsprivate = {
   admin_enabled = true
   georeplications = [
     {
+      location                = "uksouth"
+      zone_redundancy_enabled = true
+    },
+    {
       location                = "ukwest"
-      zone_redundancy_enabled = false
+      zone_redundancy_enabled = true
     }
   ]
 }
