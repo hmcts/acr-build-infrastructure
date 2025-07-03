@@ -27,7 +27,3 @@ sds_acr = {
     admin_enabled = true
   }
 }
-
-output "hmctssandbox_georeplications" {
-  value = var.cft_acr["hmctssandbox"].georeplications
-}

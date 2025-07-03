@@ -36,11 +36,21 @@ resource "azurerm_container_registry" "container_registry" {
   # }
 
 
+  #   dynamic "georeplications" {
+  #     for_each = lookup(each.value, "georeplications", [])
+  #     content {
+  #       location                = georeplications.value.location
+  #       zone_redundancy_enabled = georeplications.value.zone_redundancy_enabled
+  #       tags                    = module.tags.common_tags
+  #     }
+  #   }
+  # }
+
   dynamic "georeplications" {
     for_each = lookup(each.value, "georeplications", [])
     content {
-      location                = georeplications.value.location
-      zone_redundancy_enabled = georeplications.value.zone_redundancy_enabled
+      location                = try(georeplications.value.location, null)
+      zone_redundancy_enabled = try(georeplications.value.zone_redundancy_enabled, null)
       tags                    = module.tags.common_tags
     }
   }
