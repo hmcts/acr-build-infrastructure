@@ -39,6 +39,6 @@ resource "azurerm_container_registry" "container_registry" {
   }
 }
 
-output "hmctssandbox_georeplications" {
-  value = var.cft_acr["hmctssandbox"].georeplications
-}
+# output "hmctssandbox_georeplications" {
+#   value = var.cft_acr["hmctssandbox"].georeplications
+# }
