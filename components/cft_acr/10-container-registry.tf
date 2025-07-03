@@ -37,3 +37,4 @@ resource "azurerm_container_registry" "container_registry" {
       tags                    = {}
     }
   }
+}
