@@ -6,7 +6,9 @@ variable "product" {}
 variable "builtFrom" {}
 
 variable "location" {
-  default = "uksouth"
+  description = "List of Azure regions for deployment. The first region is used as the primary location."
+  type        = list(string)
+  default     = ["uksouth"]
 }
 
 variable "expiresAfter" {

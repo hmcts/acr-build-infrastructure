@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "cft_acr_resource_group" {
-  location = var.location
+  location = var.location[0]
   name     = var.cft_resource_group_name
   tags     = module.tags.common_tags
 }
@@ -22,7 +22,7 @@ resource "azurerm_container_registry" "container_registry" {
 
   name                     = each.key
   resource_group_name      = azurerm_resource_group.cft_acr_resource_group.name
-  location                 = var.location
+  location                 = var.location[0]
   admin_enabled            = each.value.admin_enabled
   anonymous_pull_enabled   = each.value.anonymous_pull_enabled
   sku                      = each.value.sku
@@ -32,7 +32,7 @@ resource "azurerm_container_registry" "container_registry" {
   dynamic "georeplications" {
     for_each = lookup(each.value, "georeplications", [])
     content {
-      location                = var.location
+      location                = var.location[1]
       zone_redundancy_enabled = georeplications.value.zone_redundancy_enabled
       tags                    = {}
     }
