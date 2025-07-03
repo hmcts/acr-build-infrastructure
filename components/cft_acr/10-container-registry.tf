@@ -28,23 +28,23 @@ resource "azurerm_container_registry" "container_registry" {
   sku                      = each.value.sku
   retention_policy_in_days = 1
   tags                     = module.tags.common_tags
-  georeplications {
-    location                = "ukwest"
-    zone_redundancy_enabled = true
-    tags                    = module.tags.common_tags
+  #   georeplications {
+  #     location                = "ukwest"
+  #     zone_redundancy_enabled = true
+  #     tags                    = module.tags.common_tags
+  #   }
+  # }
+
+
+  dynamic "georeplications" {
+    for_each = lookup(each.value, "georeplications", [])
+    content {
+      location                = georeplications.value.location
+      zone_redundancy_enabled = georeplications.value.zone_redundancy_enabled
+      tags                    = {}
+    }
   }
 }
-
-
-#   dynamic "georeplications" {
-#     for_each = lookup(each.value, "georeplications", [])
-#     content {
-#       location                = var.location
-#       zone_redundancy_enabled = georeplications.value.zone_redundancy_enabled
-#       tags                    = {}
-#     }
-#   }
-# }
 
 # output "hmctssandbox_georeplications" {
 #   value = var.cft_acr["hmctssandbox"].georeplications
