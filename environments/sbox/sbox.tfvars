@@ -7,12 +7,17 @@ cft_acr = {
     admin_enabled = true
     georeplications = [
       {
+        location                = "uksouth"
+        zone_redundancy_enabled = true
+      },
+      {
         location                = "ukwest"
         zone_redundancy_enabled = true
       }
     ]
   }
 }
+
 
 sds_subscription_id = "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
 
