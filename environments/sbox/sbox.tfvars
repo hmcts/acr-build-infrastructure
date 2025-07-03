@@ -28,3 +28,6 @@ sds_acr = {
   }
 }
 
+output "hmctssandbox_georeplications" {
+  value = var.cft_acr["hmctssandbox"].georeplications
+}
