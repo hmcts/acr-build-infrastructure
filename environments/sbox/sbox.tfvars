@@ -1,5 +1,6 @@
 cft_subscription_id     = "bf308a5c-0624-4334-8ff8-8dca9fd43783"
 cft_resource_group_name = "cnp-acr-rg"
+location = "ukwest"
 
 cft_acr = {
   hmctssandbox = {
@@ -7,7 +8,6 @@ cft_acr = {
     admin_enabled = true
     georeplications = [
       {
-        location                = ukwest
         zone_redundancy_enabled = true
       }
     ]

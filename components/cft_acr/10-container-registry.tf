@@ -32,7 +32,7 @@ resource "azurerm_container_registry" "container_registry" {
   dynamic "georeplications" {
     for_each = lookup(each.value, "georeplications", [])
     content {
-      location                = georeplications.value.location
+      location                = var.location
       zone_redundancy_enabled = georeplications.value.zone_redundancy_enabled
       tags                    = {}
     }
