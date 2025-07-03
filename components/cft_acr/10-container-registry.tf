@@ -30,10 +30,10 @@ resource "azurerm_container_registry" "container_registry" {
   tags                     = module.tags.common_tags
 
   dynamic "georeplications" {
-    for_each = try(each.value.georeplications, [])
+    for_each = each.value.georeplications
     content {
       location                = georeplications.value.location
-      zone_redundancy_enabled = try(georeplications.value.zone_redundancy_enabled, null)
+      zone_redundancy_enabled = georeplications.value.zone_redundancy_enabled
       tags                    = {}
     }
   }
