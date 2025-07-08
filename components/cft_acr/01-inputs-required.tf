@@ -31,7 +31,7 @@ variable "cft_acr" {
     anonymous_pull_enabled = optional(bool, false)
     georeplications = optional(list(object({
       location                = string
-      zone_redundancy_enabled = optional(bool)
+      zone_redundancy_enabled = optional(bool, false)
     })), [])
   }))
 }
