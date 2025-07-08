@@ -8,7 +8,7 @@ cft_acr = {
     georeplications = [
       {
         location                = "ukwest"
-        zone_redundancy_enabled = true
+        zone_redundancy_enabled = false # Not currently possible in ukwest as of Jul 2025
       }
     ]
   }
