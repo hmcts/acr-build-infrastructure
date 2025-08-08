@@ -29,9 +29,5 @@ variable "cft_acr" {
     sku                    = string
     admin_enabled          = bool
     anonymous_pull_enabled = optional(bool, false)
-    georeplications = optional(list(object({
-      location                = string
-      zone_redundancy_enabled = optional(bool, false)
-    })), [])
   }))
 }
