@@ -26,6 +26,7 @@ resource "azurerm_container_registry" "container_registry" {
   admin_enabled            = each.value.admin_enabled
   anonymous_pull_enabled   = each.value.anonymous_pull_enabled
   sku                      = each.value.sku
+  zone_redundancy_enabled  = each.value.zone_redundancy_enabled
   retention_policy_in_days = 1
   tags                     = module.tags.common_tags
 }

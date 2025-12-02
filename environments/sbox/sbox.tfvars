@@ -6,6 +6,11 @@ cft_acr = {
     sku           = "Premium"
     admin_enabled = true
   }
+  hmctssbox = {
+    sku                     = "Premium"
+    admin_enabled           = true
+    zone_redundancy_enabled = true
+  }
 }
 
 sds_subscription_id = "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
