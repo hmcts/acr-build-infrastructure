@@ -18,7 +18,7 @@ sds_acr = {
 }
 
 zr_subscription_id     = "bf308a5c-0624-4334-8ff8-8dca9fd43783"
-zr_resource_group_name = "cnp-acr-zr-rg"
+zr_resource_group_name = "cnp-acr-rg"
 
 zr_acr = {
   hmctssbox = {
