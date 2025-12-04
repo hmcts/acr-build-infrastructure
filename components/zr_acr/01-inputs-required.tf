@@ -13,18 +13,18 @@ variable "expiresAfter" {
   default = "3000-01-01"
 }
 
-variable "cft_resource_group_name" {
-  description = "Name of the resource group"
+variable "zr_resource_group_name" {
+  description = "Name of the resource group for zone-redundant ACRs"
   type        = string
 }
 
-variable "cft_subscription_id" {
-  description = "Subscription ID"
+variable "zr_subscription_id" {
+  description = "Subscription ID for zone-redundant ACRs"
   type        = string
 }
 
-variable "cft_acr" {
-  description = "CFT ACR to be created"
+variable "zr_acr" {
+  description = "Zone-redundant ACRs to be created"
   type = map(object({
     sku                    = string
     admin_enabled          = bool
