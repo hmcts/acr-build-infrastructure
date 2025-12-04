@@ -1,3 +1,4 @@
+# To be made a resource after we get to removing old ACRs using tf move
 data "azurerm_resource_group" "zr_acr_resource_group" {
   name = var.zr_resource_group_name
 }
