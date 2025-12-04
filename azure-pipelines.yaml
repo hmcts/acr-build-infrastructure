@@ -40,6 +40,13 @@ parameters:
         product: "cft-platform"
         dependsOn: "Precheck"
 
+      - deployment: "zr_sbox_acr"
+        environment: "sbox"
+        component: "zr_acr"
+        service_connection: "OPS-APPROVAL-GATE-SBOX-ENVS"
+        product: "cft-platform"
+        dependsOn: "Precheck"
+
       - deployment: "sds_prod_acr"
         environment: "prod"
         component: "sds_acr"
