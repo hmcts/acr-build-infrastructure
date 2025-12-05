@@ -23,3 +23,13 @@ sds_acr = {
     anonymous_pull_enabled = true
   }
 }
+
+zr_subscription_id     = "8999dec3-0104-4a27-94ee-6588559729d1"
+zr_resource_group_name = "rpe-acr-prod-rg"
+
+zr_acr = {
+  hmctsprod = {
+    sku           = "Premium"
+    admin_enabled = true
+  }
+}
