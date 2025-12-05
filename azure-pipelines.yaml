@@ -61,6 +61,13 @@ parameters:
         product: "cft-platform"
         dependsOn: "precheck"
 
+      - deployment: "zr_prod_acr"
+        environment: "prod"
+        component: "zr_acr"
+        service_connection: "OPS-APPROVAL-GATE-PROD-ENVS"
+        product: "cft-platform"
+        dependsOn: "Precheck"
+
 variables:
   - name: timeoutInMinutes
     value: 60
