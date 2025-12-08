@@ -22,3 +22,9 @@ provider "azurerm" {
 }
 
 provider "azuread" {}
+
+provider "azurerm" {
+  alias           = "keyvault"
+  features {}
+  subscription_id = var.env == "prod" ? "1baf5470-1c3e-40d3-a6f7-74bfbce4b348" : "1497c3d7-ab6d-4bb7-8a10-b51d03189ee3"
+}
