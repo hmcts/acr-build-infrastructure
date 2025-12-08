@@ -19,7 +19,7 @@ data "azurerm_key_vault_secret" "dockerhub_password" {
 
 resource "azurerm_container_registry_credential_set" "dockerhub" {
   name                  = "dockerhub"
-  container_registry_id = azurerm_container_registry.example.id
+  container_registry_id = azurerm_container_registry.container_registry.id
   login_server          = "docker.io"
   identity {
     type = "SystemAssigned"
