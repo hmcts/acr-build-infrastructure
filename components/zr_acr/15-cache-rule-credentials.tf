@@ -36,3 +36,12 @@ resource "azurerm_container_registry_credential_set" "dockerhub" {
     password_secret_id = data.azurerm_key_vault_secret.dockerhub_password.versionless_id
   }
 }
+
+resource "azurerm_key_vault_access_policy" "acr_credential_read_secrets" {
+  provider           = azurerm.keyvault
+
+  key_vault_id       = data.azurerm_key_vault.dockerhub.id
+  tenant_id          = azurerm_container_registry_credential_set.dockerhub.identity[0].tenant_id
+  object_id          = azurerm_container_registry_credential_set.dockerhub.identity[0].principal_id
+  secret_permissions = ["Get", "List"]
+}
