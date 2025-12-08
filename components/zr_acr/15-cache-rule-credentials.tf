@@ -18,12 +18,16 @@ data "azurerm_key_vault_secret" "dockerhub_password" {
 }
 
 resource "azurerm_container_registry_credential_set" "dockerhub" {
+  for_each = var.zr_acr
+
   name                  = "dockerhub"
-  container_registry_id = azurerm_container_registry.container_registry.id
+  container_registry_id = azurerm_container_registry.container_registry[each.key].id
   login_server          = "docker.io"
+
   identity {
     type = "SystemAssigned"
   }
+
   authentication_credentials {
     username_secret_id = data.azurerm_key_vault_secret.dockerhub_username.versionless_id
     password_secret_id = data.azurerm_key_vault_secret.dockerhub_password.versionless_id
