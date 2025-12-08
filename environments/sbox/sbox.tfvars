@@ -26,3 +26,10 @@ zr_acr = {
     admin_enabled = true
   }
 }
+
+cache_rule_dockerhub_credentials ={
+  key_vault_name        = "cftsbox-intsvc"
+  key_vault_rg          = "core-infra-intsvc-rg"
+  username_secret_name  = "docker-hub-acr-cache-user"
+  password_secret_name  = "docker-hub-acr-cache-token"
+}
