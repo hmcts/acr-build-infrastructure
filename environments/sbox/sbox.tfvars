@@ -26,11 +26,11 @@ zr_acr = {
     admin_enabled = true
     role_assignments = {
       "cft-aks-sbox-mi-pull" = {
-        principal_id         = "96775d73-e4f3-49ee-8bb6-f8660a19ba85"
+        principal_id         = "ff47ab8f-e4d9-48f2-ad31-af5933824849"
         role_definition_name = "AcrPull"
       },
       "sds-aks-sbox-mi-pull" = {
-        principal_id         = "09d99cb4-e1e7-49c2-a8e6-b5b1740e9c3b"
+        principal_id         = "ba206872-8722-4375-bf4d-a28c39dff414"
         role_definition_name = "AcrPull"
       }
     }
