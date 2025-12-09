@@ -30,6 +30,7 @@ resource "azurerm_role_assignment" "zr_acr" {
         acr_name             = acr_name
         principal_id         = role_config.principal_id
         role_definition_name = role_config.role_definition_name
+        principal_type       = role_config.principal_type
       }
     }
   ]...)
@@ -37,4 +38,5 @@ resource "azurerm_role_assignment" "zr_acr" {
   scope                = azurerm_container_registry.container_registry[each.value.acr_name].id
   role_definition_name = each.value.role_definition_name
   principal_id         = each.value.principal_id
+  principal_type       = each.value.principal_type
 }

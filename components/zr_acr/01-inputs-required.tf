@@ -42,6 +42,7 @@ variable "zr_acr" {
     role_assignments = optional(map(object({
       principal_id         = string
       role_definition_name = string
+      principal_type       = optional(string, "ServicePrincipal")
     })), {})
   }))
 }
