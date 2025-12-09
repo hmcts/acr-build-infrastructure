@@ -23,3 +23,28 @@ zr_acr = {
 ```
 
 Zone redundancy is automatically enabled for all ACRs in this component.
+
+## Optional Role Assignments
+
+You can optionally assign roles to principals for specific ZR ACRs by adding role_assignments to each ACR:
+
+```hcl
+zr_acr = {
+  hmctssbox = {
+    sku           = "Premium"
+    admin_enabled = false
+    role_assignments = {
+      "push-role" = {
+        principal_id         = "<object_id_of_principal>"
+        role_definition_name = "AcrPush"
+      }
+      "pull-role" = {
+        principal_id         = "<another_object_id>"
+        role_definition_name = "AcrPull"
+      }
+    }
+  }
+}
+```
+
+Omit or leave `role_assignments` empty to skip role assignments for an ACR.
