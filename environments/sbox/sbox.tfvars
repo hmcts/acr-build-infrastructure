@@ -32,6 +32,10 @@ zr_acr = {
       "sds-aks-sbox-mi-pull" = {
         principal_id         = "ba206872-8722-4375-bf4d-a28c39dff414"
         role_definition_name = "AcrPull"
+      },
+      "jenkins-cftptl-intsvc-mi" = {
+        principal_id         = "ca6d5085-485a-417d-8480-c3cefa29df31"
+        role_definition_name = "AcrPull"
       }
     }
   }
