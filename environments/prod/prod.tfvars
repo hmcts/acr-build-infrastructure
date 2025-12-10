@@ -31,6 +31,18 @@ zr_acr = {
   hmctsprod = {
     sku           = "Premium"
     admin_enabled = true
+    role_assignments = {
+      "cft-developers" = {
+        principal_id         = "b2a1773c-a5ae-48b5-b5fa-95b0e05eee05"
+        role_definition_name = "AcrPull"
+        principal_type       = "Group"
+      },
+      "sds-developers" = {
+        principal_id         = "7bde62e7-b39f-487c-95c9-b4c794fdbb96"
+        role_definition_name = "AcrPull"
+        principal_type       = "Group"
+      }
+    }
   }
 }
 
