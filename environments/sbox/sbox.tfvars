@@ -40,6 +40,10 @@ zr_acr = {
       "aks-kubelet-ptl-mi" = {
         principal_id         = "7a6762ce-8a4f-4496-b7e5-08ea2f55bbc4"
         role_definition_name = "AcrPull"
+      },
+      "aks-kubelet-sbox-mi" = {
+        principal_id         = "fd657beb-8e34-42f2-9cc7-f9016a065849"
+        role_definition_name = "AcrPull"
       }
     }
   }
