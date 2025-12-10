@@ -36,6 +36,10 @@ zr_acr = {
       "jenkins-cftptl-intsvc-mi" = {
         principal_id         = "ca6d5085-485a-417d-8480-c3cefa29df31"
         role_definition_name = "AcrPull"
+      },
+      "aks-kubelet-ptl-mi" = {
+        principal_id         = "7a6762ce-8a4f-4496-b7e5-08ea2f55bbc4"
+        role_definition_name = "AcrPull"
       }
     }
   }
