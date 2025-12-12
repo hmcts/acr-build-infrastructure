@@ -42,9 +42,9 @@ zr_acr = {
         role_definition_name = "AcrPull"
         principal_type       = "Group"
       },
-      "jenkins-ptl-mi-pull" = {
+      "jenkins-ptl-mi-contributor" = {
         principal_id         = "7ef3b6ce-3974-41ab-8512-c3ef4bb8ae01"
-        role_definition_name = "AcrPull"
+        role_definition_name = "Contributor"
       }
     }
   }
