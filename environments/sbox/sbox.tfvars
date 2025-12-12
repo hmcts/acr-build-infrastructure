@@ -22,8 +22,9 @@ zr_resource_group_name = "cnp-acr-rg"
 
 zr_acr = {
   hmctssbox = {
-    sku           = "Premium"
-    admin_enabled = true
+    sku                      = "Premium"
+    admin_enabled            = true
+    enable_managed_identity  = true
     role_assignments = {
       "cft-aks-sbox-mi-pull" = {
         principal_id         = "ff47ab8f-e4d9-48f2-ad31-af5933824849"

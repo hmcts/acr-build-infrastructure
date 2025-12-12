@@ -7,6 +7,15 @@ data "azurerm_resource_group" "zr_acr_resource_group" {
 # Zone-Redundant Azure Container Registries
 #--------------------------------------------------------------
 
+resource "azurerm_user_assigned_identity" "acr_identity" {
+  for_each = { for k, v in var.zr_acr : k => v if v.enable_managed_identity }
+
+  name                = "${each.key}-identity"
+  resource_group_name = data.azurerm_resource_group.zr_acr_resource_group.name
+  location            = data.azurerm_resource_group.zr_acr_resource_group.location
+  tags                = module.tags.common_tags
+}
+
 resource "azurerm_container_registry" "container_registry" {
   for_each = var.zr_acr
 
@@ -19,6 +28,16 @@ resource "azurerm_container_registry" "container_registry" {
   zone_redundancy_enabled  = true
   retention_policy_in_days = 1
   tags                     = module.tags.common_tags
+
+  dynamic "identity" {
+    for_each = each.value.enable_managed_identity ? [1] : []
+    content {
+      type = "UserAssigned"
+      identity_ids = [
+        azurerm_user_assigned_identity.acr_identity[each.key].id
+      ]
+    }
+  }
 }
 
 # Optional role assignments for ZR ACRs
