@@ -45,6 +45,10 @@ zr_acr = {
         principal_id         = "fd657beb-8e34-42f2-9cc7-f9016a065849"
         role_definition_name = "AcrPull"
       },
+      "jenkins-ptl-mi-pull" = {
+        principal_id         = "7ef3b6ce-3974-41ab-8512-c3ef4bb8ae01"
+        role_definition_name = "AcrPull"
+      },
       "cft-developers" = {
         principal_id         = "b2a1773c-a5ae-48b5-b5fa-95b0e05eee05"
         role_definition_name = "AcrPull"
