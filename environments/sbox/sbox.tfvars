@@ -33,21 +33,25 @@ zr_acr = {
         principal_id         = "ba206872-8722-4375-bf4d-a28c39dff414"
         role_definition_name = "AcrPull"
       },
-      "jenkins-cftptl-intsvc-mi" = {
+      "jenkins-cftptl-intsvc-mi-pull" = {
         principal_id         = "ca6d5085-485a-417d-8480-c3cefa29df31"
         role_definition_name = "AcrPull"
       },
-      "aks-kubelet-ptl-mi" = {
+      "aks-kubelet-ptl-mi-pull" = {
         principal_id         = "7a6762ce-8a4f-4496-b7e5-08ea2f55bbc4"
         role_definition_name = "AcrPull"
       },
-      "aks-kubelet-sbox-mi" = {
+      "aks-kubelet-sbox-mi-pull" = {
         principal_id         = "fd657beb-8e34-42f2-9cc7-f9016a065849"
         role_definition_name = "AcrPull"
       },
-      "jenkins-ptl-mi-pull" = {
+      "jenkins-ptl-mi-push" = {
         principal_id         = "7ef3b6ce-3974-41ab-8512-c3ef4bb8ae01"
-        role_definition_name = "AcrPull"
+        role_definition_name = "AcrPush"
+      },
+      "jenkins-ptl-mi-reader" = {
+        principal_id         = "7ef3b6ce-3974-41ab-8512-c3ef4bb8ae01"
+        role_definition_name = "Reader"
       },
       "cft-developers" = {
         principal_id         = "b2a1773c-a5ae-48b5-b5fa-95b0e05eee05"
