@@ -45,6 +45,10 @@ zr_acr = {
       "jenkins-ptl-mi-contributor" = {
         principal_id         = "7ef3b6ce-3974-41ab-8512-c3ef4bb8ae01"
         role_definition_name = "Contributor"
+      },
+      "hmctssbox-identity-pull" = {
+        principal_id         = "7dee46ea-9b5b-4ce0-893d-56bd3619e270"
+        role_definition_name = "AcrPull"
       }
     }
   }
