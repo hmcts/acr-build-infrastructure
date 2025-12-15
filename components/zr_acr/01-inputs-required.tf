@@ -40,7 +40,16 @@ variable "zr_acr" {
     admin_enabled          = bool
     anonymous_pull_enabled = optional(bool, false)
     enable_managed_identity = optional(bool, false)
+    # Role assignments on the ACR itself (e.g., AcrPull, Contributor)
     role_assignments = optional(map(object({
+      principal_id         = string
+      role_definition_name = string
+      principal_type       = optional(string, "ServicePrincipal")
+    })), {})
+    # Role assignments on the managed identity resource itself
+    # Used to grant permissions like "Managed Identity Operator" so other identities
+    # (e.g., Jenkins) can use this identity to authenticate ACR Tasks with other registries
+    identity_role_assignments = optional(map(object({
       principal_id         = string
       role_definition_name = string
       principal_type       = optional(string, "ServicePrincipal")

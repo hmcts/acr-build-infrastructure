@@ -24,7 +24,15 @@ zr_acr = {
   hmctssbox = {
     sku                      = "Premium"
     admin_enabled            = true
-    enable_managed_identity  = true
+    enable_managed_identity  = true    
+    # Grant Jenkins MI the ability to use the ACR's managed identity
+    # This allows ACR Tasks run by Jenkins to authenticate to other registries (like hmctsprod)    
+    identity_role_assignments = {
+      "jenkins-ptl-mi-identity-operator" = {
+        principal_id         = "7ef3b6ce-3974-41ab-8512-c3ef4bb8ae01"
+        role_definition_name = "Managed Identity Operator"
+      }
+    }
     role_assignments = {
       "cft-aks-sbox-mi-pull" = {
         principal_id         = "ff47ab8f-e4d9-48f2-ad31-af5933824849"
@@ -44,6 +52,14 @@ zr_acr = {
       },
       "aks-kubelet-sbox-mi-pull" = {
         principal_id         = "fd657beb-8e34-42f2-9cc7-f9016a065849"
+        role_definition_name = "AcrPull"
+      },
+      "aks-kubelet-dev-mi-pull" = {
+        principal_id         = "aa4fdc35-0cfd-4db0-a5b4-d17d0f4bf06a"
+        role_definition_name = "AcrPull"
+      },
+      "aks-kubelet-stg-mi-pull" = {
+        principal_id         = "be335440-0f13-4e3d-80c6-c5164257f0d9"
         role_definition_name = "AcrPull"
       },
       "jenkins-ptl-mi-contributor" = {
