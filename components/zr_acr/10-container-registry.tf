@@ -16,6 +16,26 @@ resource "azurerm_user_assigned_identity" "acr_identity" {
   tags                = module.tags.common_tags
 }
 
+# Optional role assignments on the managed identity itself
+resource "azurerm_role_assignment" "acr_identity" {
+  for_each = merge([
+    for acr_name, acr_config in var.zr_acr : {
+      for role_key, role_config in acr_config.identity_role_assignments :
+      "${acr_name}-${role_key}" => {
+        acr_name             = acr_name
+        principal_id         = role_config.principal_id
+        role_definition_name = role_config.role_definition_name
+        principal_type       = role_config.principal_type
+      } if acr_config.enable_managed_identity
+    }
+  ]...)
+
+  scope                = azurerm_user_assigned_identity.acr_identity[each.value.acr_name].id
+  role_definition_name = each.value.role_definition_name
+  principal_id         = each.value.principal_id
+  principal_type       = each.value.principal_type
+}
+
 resource "azurerm_container_registry" "container_registry" {
   for_each = var.zr_acr
 
