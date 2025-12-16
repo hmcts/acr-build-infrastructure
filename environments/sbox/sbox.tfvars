@@ -34,6 +34,10 @@ zr_acr = {
       }
     }
     role_assignments = {
+      "hmctssbox-identity-contributor" = {
+        principal_id         = "7dee46ea-9b5b-4ce0-893d-56bd3619e270"
+        role_definition_name = "Contributor"
+      }
       "cft-aks-sbox-mi-pull" = {
         principal_id         = "ff47ab8f-e4d9-48f2-ad31-af5933824849"
         role_definition_name = "AcrPull"
@@ -42,9 +46,9 @@ zr_acr = {
         principal_id         = "ba206872-8722-4375-bf4d-a28c39dff414"
         role_definition_name = "AcrPull"
       },
-      "jenkins-cftptl-intsvc-mi-pull" = {
+      "jenkins-cftptl-intsvc-mi-contributor" = {
         principal_id         = "ca6d5085-485a-417d-8480-c3cefa29df31"
-        role_definition_name = "AcrPull"
+        role_definition_name = "Contributor"
       },
       "aks-kubelet-ptl-mi-pull" = {
         principal_id         = "7a6762ce-8a4f-4496-b7e5-08ea2f55bbc4"
