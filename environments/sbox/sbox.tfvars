@@ -31,13 +31,17 @@ zr_acr = {
       "jenkins-ptl-mi-identity-operator" = {
         principal_id         = "7ef3b6ce-3974-41ab-8512-c3ef4bb8ae01"
         role_definition_name = "Managed Identity Operator"
-      }
+      },
+      "jenkins-cftptl-intsvc-mi-operator" = {
+        principal_id         = "ca6d5085-485a-417d-8480-c3cefa29df31"
+        role_definition_name = "Managed Identity Operator"
+      },
     }
     role_assignments = {
       "hmctssbox-identity-contributor" = {
         principal_id         = "7dee46ea-9b5b-4ce0-893d-56bd3619e270"
         role_definition_name = "Contributor"
-      }
+      },
       "cft-aks-sbox-mi-pull" = {
         principal_id         = "ff47ab8f-e4d9-48f2-ad31-af5933824849"
         role_definition_name = "AcrPull"
