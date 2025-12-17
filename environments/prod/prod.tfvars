@@ -49,7 +49,11 @@ zr_acr = {
       "hmctssbox-identity-pull" = {
         principal_id         = "7dee46ea-9b5b-4ce0-893d-56bd3619e270"
         role_definition_name = "AcrPull"
-      }
+      },
+      "jenkins-cftptl-intsvc-mi-contributor" = {
+        principal_id         = "ca6d5085-485a-417d-8480-c3cefa29df31"
+        role_definition_name = "Contributor"
+      },
     }
   }
 }
