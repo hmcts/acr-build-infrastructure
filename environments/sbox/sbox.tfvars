@@ -70,6 +70,10 @@ zr_acr = {
         principal_id         = "be335440-0f13-4e3d-80c6-c5164257f0d9"
         role_definition_name = "AcrPull"
       },
+      "cft-preview-01-aks-agentpool-pull" = {
+        principal_id         = "f9778736-862f-4ea7-8ef5-9d15ae8f1743"
+        role_definition_name = "AcrPull"
+      },
       "jenkins-ptl-mi-contributor" = {
         principal_id         = "7ef3b6ce-3974-41ab-8512-c3ef4bb8ae01"
         role_definition_name = "Contributor"
