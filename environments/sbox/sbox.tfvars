@@ -78,6 +78,10 @@ zr_acr = {
         principal_id         = "7ef3b6ce-3974-41ab-8512-c3ef4bb8ae01"
         role_definition_name = "Contributor"
       },
+      "azure-devops-prod1-contributor" = {
+        principal_id         = "163fd02c-924f-4c35-babc-5c6d5a749894"
+        role_definition_name = "Contributor"
+      },
       "cft-developers" = {
         principal_id         = "b2a1773c-a5ae-48b5-b5fa-95b0e05eee05"
         role_definition_name = "AcrPull"
