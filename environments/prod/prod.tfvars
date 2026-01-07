@@ -49,6 +49,10 @@ zr_acr = {
       "hmctssbox-identity-pull" = {
         principal_id         = "7dee46ea-9b5b-4ce0-893d-56bd3619e270"
         role_definition_name = "AcrPull"
+      },
+      "renovate-pull" = {
+        principal_id         = "831a6a68-6555-4467-b8ca-e80be0c04e31"
+        role_definition_name = "AcrPull"
       }
     }
   }
