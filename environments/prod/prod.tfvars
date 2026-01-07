@@ -51,7 +51,7 @@ zr_acr = {
         role_definition_name = "AcrPull"
       },
       "renovate-pull" = {
-        principal_id         = "285bb76c-10ac-4baa-854a-17ff044cf293"
+        principal_id         = "b3b7ba91-dadc-40ca-831a-a3d5adeb367c"
         role_definition_name = "AcrPull"
       }
     }
