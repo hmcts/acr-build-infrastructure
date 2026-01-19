@@ -54,6 +54,7 @@ zr_acr = {
         principal_id         = "b3b7ba91-dadc-40ca-831a-a3d5adeb367c"
         role_definition_name = "AcrPull"
       },
+      # CFT AKS Source Controller Identities
       "cft-aks-aat-mi-pull" = {
         principal_id         = "9a2e3549-c5aa-4f7b-bcf8-1e1b3baf864c"
         role_definition_name = "AcrPull"
@@ -88,6 +89,76 @@ zr_acr = {
       }
       "cft-aks-sbox-mi-pull" = {
         principal_id         = "ff47ab8f-e4d9-48f2-ad31-af5933824849"
+        role_definition_name = "AcrPull"
+      },
+      # SDS AKS Source Controller Identities
+      "sds-aks-demo-mi-pull" = {
+        principal_id         = "da1811ab-7eb9-4dbb-92eb-ad0e2e475ffe"
+        role_definition_name = "AcrPull"
+      },
+      "sds-aks-dev-mi-pull" = {
+        principal_id         = "6c5fded7-1350-4d99-b404-8f57d0025643"
+        role_definition_name = "AcrPull"
+      },
+      "sds-aks-ithc-mi-pull" = {
+        principal_id         = "6cc10170-e033-4e13-ba3c-0d3fff52d182"
+        role_definition_name = "AcrPull"
+      },
+      "sds-aks-prod-mi-pull" = {
+        principal_id         = "9fa9a7a7-f4d8-4731-9dca-2dd264836bf9"
+        role_definition_name = "AcrPull"
+      },
+      "sds-aks-ptl-mi-pull" = {
+        principal_id         = "6ad917c2-3739-4b6d-98b6-d9f45462f440"
+        role_definition_name = "AcrPull"
+      },
+      "sds-aks-ptlsbox-mi-pull" = {
+        principal_id         = "d864b3ca-238c-474a-a426-6e526207cf4a"
+        role_definition_name = "AcrPull"
+      },
+      "sds-aks-stg-mi-pull" = {
+        principal_id         = "1f42d5fd-e934-43b3-b55c-cdb2e7cf44eb"
+        role_definition_name = "AcrPull"
+      },
+      "sds-aks-test-mi-pull" = {
+        principal_id         = "b24bca5d-656e-4285-85a9-f69dd718a17e"
+        role_definition_name = "AcrPull"
+      },
+      # AKS Kubelet Identities
+      "aks-kubelet-ptl-mi-pull" = {
+        principal_id         = "7a6762ce-8a4f-4496-b7e5-08ea2f55bbc4"
+        role_definition_name = "AcrPull"
+      },
+      "aks-kubelet-ptlsbox-mi-pull" = {
+        principal_id         = "434dc02a-5353-4ccc-9f26-c8bbf2105e7f"
+        role_definition_name = "AcrPull"
+      },
+      "aks-kubelet-sbox-mi-pull" = {
+        principal_id         = "fd657beb-8e34-42f2-9cc7-f9016a065849"
+        role_definition_name = "AcrPull"
+      },
+      "aks-kubelet-dev-mi-pull" = {
+        principal_id         = "aa4fdc35-0cfd-4db0-a5b4-d17d0f4bf06a"
+        role_definition_name = "AcrPull"
+      },
+      "aks-kubelet-stg-mi-pull" = {
+        principal_id         = "be335440-0f13-4e3d-80c6-c5164257f0d9"
+        role_definition_name = "AcrPull"
+      },
+      "aks-kubelet-demo-mi-pull" = {
+        principal_id         = "4a8907ff-bf6f-4b5d-92d0-4a95e6882ef6"
+        role_definition_name = "AcrPull"
+      },
+      "aks-kubelet-ithc-mi-pull" = {
+        principal_id         = "58308c21-1a57-49eb-b2ba-f9507083425f"
+        role_definition_name = "AcrPull"
+      },
+      "aks-kubelet-prod-mi-pull" = {
+        principal_id         = "2bdafbb5-961b-4f0f-9de2-0e3a1f1ef8f5"
+        role_definition_name = "AcrPull"
+      },
+      "aks-kubelet-test-mi-pull" = {
+        principal_id         = "b5e9c5f4-9d7a-4156-a820-412fb3ac8c38"
         role_definition_name = "AcrPull"
       },
     }
