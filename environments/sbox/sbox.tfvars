@@ -24,9 +24,9 @@ zr_acr = {
   hmctssbox = {
     sku                      = "Premium"
     admin_enabled            = true
-    enable_managed_identity  = true    
+    enable_managed_identity  = true
     # Grant Jenkins MI the ability to use the ACR's managed identity
-    # This allows ACR Tasks run by Jenkins to authenticate to other registries (like hmctsprod)    
+    # This allows ACR Tasks run by Jenkins to authenticate to other registries (like hmctsprod)
     identity_role_assignments = {
       "jenkins-ptl-mi-identity-operator" = {
         principal_id         = "7ef3b6ce-3974-41ab-8512-c3ef4bb8ae01"
