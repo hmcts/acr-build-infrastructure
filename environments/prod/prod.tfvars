@@ -21,6 +21,12 @@ sds_acr = {
     sku                    = "Premium"
     admin_enabled          = true
     anonymous_pull_enabled = true
+    role_assignments = {
+      "DTSPO-30163-jenkins-build-only-mi" = {
+        principal_id         = "17ec686e-b62a-45d4-8dce-42ff580d2a32"
+        role_definition_name = "Contributor"
+      }
+    }
   }
 }
 
