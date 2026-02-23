@@ -14,12 +14,6 @@ sds_acr = {
   sdshmctspublicsbox = {
     sku           = "Premium"
     admin_enabled = true
-    role_assignments = {
-      "DTSPO-30163" = {
-        principal_id         = "17ec686e-b62a-45d4-8dce-42ff580d2a32"
-        role_definition_name = "Contributor"
-      }
-    }
   }
 }
 
@@ -97,10 +91,6 @@ zr_acr = {
         principal_id         = "7bde62e7-b39f-487c-95c9-b4c794fdbb96"
         role_definition_name = "AcrPull"
         principal_type       = "Group"
-      },
-      "DTSPO-30163" = {
-        principal_id         = "17ec686e-b62a-45d4-8dce-42ff580d2a32"
-        role_definition_name = "Contributor"
       }
     }
   }
