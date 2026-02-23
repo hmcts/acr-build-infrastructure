@@ -14,6 +14,12 @@ sds_acr = {
   sdshmctspublicsbox = {
     sku           = "Premium"
     admin_enabled = true
+    role_assignments = {
+      "DTSPO-30163" = {
+        principal_id         = "17ec686e-b62a-45d4-8dce-42ff580d2a32"
+        role_definition_name = "Contributor"
+      }
+    }
   }
 }
 
@@ -22,9 +28,9 @@ zr_resource_group_name = "cnp-acr-rg"
 
 zr_acr = {
   hmctssbox = {
-    sku                      = "Premium"
-    admin_enabled            = true
-    enable_managed_identity  = true
+    sku                     = "Premium"
+    admin_enabled           = true
+    enable_managed_identity = true
     # Grant Jenkins MI the ability to use the ACR's managed identity
     # This allows ACR Tasks run by Jenkins to authenticate to other registries (like hmctsprod)
     identity_role_assignments = {
@@ -91,14 +97,18 @@ zr_acr = {
         principal_id         = "7bde62e7-b39f-487c-95c9-b4c794fdbb96"
         role_definition_name = "AcrPull"
         principal_type       = "Group"
+      },
+      "DTSPO-30163" = {
+        principal_id         = "17ec686e-b62a-45d4-8dce-42ff580d2a32"
+        role_definition_name = "Contributor"
       }
     }
   }
 }
 
-cache_rule_dockerhub_credentials ={
-  key_vault_name        = "cftsbox-intsvc"
-  key_vault_rg          = "core-infra-intsvc-rg"
-  username_secret_name  = "docker-hub-acr-cache-user"
-  password_secret_name  = "docker-hub-acr-cache-token"
+cache_rule_dockerhub_credentials = {
+  key_vault_name       = "cftsbox-intsvc"
+  key_vault_rg         = "core-infra-intsvc-rg"
+  username_secret_name = "docker-hub-acr-cache-user"
+  password_secret_name = "docker-hub-acr-cache-token"
 }
