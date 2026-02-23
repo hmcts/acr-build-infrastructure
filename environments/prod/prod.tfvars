@@ -167,13 +167,17 @@ zr_acr = {
         principal_id         = "b5e9c5f4-9d7a-4156-a820-412fb3ac8c38"
         role_definition_name = "AcrPull"
       },
+      "DTSPO-30163-jenkins-build-only-mi" = {
+        principal_id         = "17ec686e-b62a-45d4-8dce-42ff580d2a32"
+        role_definition_name = "Contributor"
+      }
     }
   }
 }
 
-cache_rule_dockerhub_credentials ={
-  key_vault_name        = "cftptl-intsvc"
-  key_vault_rg          = "core-infra-intsvc-rg"
-  username_secret_name  = "docker-hub-acr-cache-user"
-  password_secret_name  = "docker-hub-acr-cache-token"
+cache_rule_dockerhub_credentials = {
+  key_vault_name       = "cftptl-intsvc"
+  key_vault_rg         = "core-infra-intsvc-rg"
+  username_secret_name = "docker-hub-acr-cache-user"
+  password_secret_name = "docker-hub-acr-cache-token"
 }

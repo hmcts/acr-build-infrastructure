@@ -30,5 +30,10 @@ variable "sds_acr" {
     sku                    = string
     admin_enabled          = bool
     anonymous_pull_enabled = optional(bool, false)
+    role_assignments = optional(map(object({
+      principal_id         = string
+      role_definition_name = string
+      principal_type       = optional(string, "ServicePrincipal")
+    })), {})
   }))
 }
