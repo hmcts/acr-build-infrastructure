@@ -14,6 +14,12 @@ sds_acr = {
   sdshmctspublicsbox = {
     sku           = "Premium"
     admin_enabled = true
+    role_assignments = {
+      "jenkins-ptlsbox-build-only-acr-pull" = {
+        principal_id         = "446d9962-16af-444c-b72e-ce0f5a99999e"
+        role_definition_name = "AcrPull"
+      },
+    }
   }
 }
 
@@ -91,7 +97,11 @@ zr_acr = {
         principal_id         = "7bde62e7-b39f-487c-95c9-b4c794fdbb96"
         role_definition_name = "AcrPull"
         principal_type       = "Group"
-      }
+      },
+      "jenkins-ptlsbox-build-only-acr-pull" = {
+        principal_id         = "446d9962-16af-444c-b72e-ce0f5a99999e"
+        role_definition_name = "AcrPull"
+      },
     }
   }
 }
