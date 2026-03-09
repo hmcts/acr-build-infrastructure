@@ -91,6 +91,7 @@ zr_acr = {
         principal_id         = "ff47ab8f-e4d9-48f2-ad31-af5933824849"
         role_definition_name = "AcrPull"
       },
+      
       # SDS AKS Source Controller Identities
       "sds-aks-demo-mi-pull" = {
         principal_id         = "da1811ab-7eb9-4dbb-92eb-ad0e2e475ffe"
@@ -122,6 +123,10 @@ zr_acr = {
       },
       "sds-aks-test-mi-pull" = {
         principal_id         = "b24bca5d-656e-4285-85a9-f69dd718a17e"
+        role_definition_name = "AcrPull"
+      },
+      "sds-aks-sbox-mi-pull" = {
+        principal_id         = "ba206872-8722-4375-bf4d-a28c39dff414"
         role_definition_name = "AcrPull"
       },
       # AKS Kubelet Identities
