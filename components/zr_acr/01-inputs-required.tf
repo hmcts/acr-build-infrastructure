@@ -26,19 +26,19 @@ variable "zr_subscription_id" {
 variable "cache_rule_dockerhub_credentials" {
   description = "Key Vault and secret names for Docker Hub credentials used by ACR Tasks with cache rules."
   type = object({
-    key_vault_name        = string
-    key_vault_rg          = string
-    username_secret_name  = string
-    password_secret_name  = string
+    key_vault_name       = string
+    key_vault_rg         = string
+    username_secret_name = string
+    password_secret_name = string
   })
 }
 
 variable "zr_acr" {
   description = "Zone-redundant ACRs to be created"
   type = map(object({
-    sku                    = string
-    admin_enabled          = bool
-    anonymous_pull_enabled = optional(bool, false)
+    sku                     = string
+    admin_enabled           = bool
+    anonymous_pull_enabled  = optional(bool, false)
     enable_managed_identity = optional(bool, false)
     # Role assignments on the ACR itself (e.g., AcrPull, Contributor)
     role_assignments = optional(map(object({

@@ -38,8 +38,8 @@ resource "azurerm_container_registry_credential_set" "dockerhub" {
 }
 
 resource "azurerm_key_vault_access_policy" "acr_credential_read_secrets" {
-  for_each           = var.zr_acr
-  provider           = azurerm.keyvault
+  for_each = var.zr_acr
+  provider = azurerm.keyvault
 
   key_vault_id       = data.azurerm_key_vault.dockerhub.id
   tenant_id          = azurerm_container_registry_credential_set.dockerhub[each.key].identity[0].tenant_id
