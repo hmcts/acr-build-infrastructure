@@ -91,6 +91,10 @@ zr_acr = {
         principal_id         = "ff47ab8f-e4d9-48f2-ad31-af5933824849"
         role_definition_name = "AcrPull"
       },
+      "courtstranscribe-mi-pull" = {
+        principal_id         = "dfc37f08-e9ba-4280-8e4c-e3602b1bd7fe"
+        role_definition_name = "AcrPull"
+      },
       
       # SDS AKS Source Controller Identities
       "sds-aks-demo-mi-pull" = {
