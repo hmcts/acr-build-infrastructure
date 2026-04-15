@@ -91,8 +91,12 @@ zr_acr = {
         principal_id         = "ff47ab8f-e4d9-48f2-ad31-af5933824849"
         role_definition_name = "AcrPull"
       },
-      "courtstranscribe-mi-pull" = {
+      "courtstranscribe-dev-mi-pull" = {
         principal_id         = "dfc37f08-e9ba-4280-8e4c-e3602b1bd7fe"
+        role_definition_name = "AcrPull"
+      },
+      "courtstranscribe-stg-mi-pull" = {
+        principal_id         = "0290b7bc-4fb8-4d25-8b0c-dd1bcc861eba"
         role_definition_name = "AcrPull"
       },
 
