@@ -100,7 +100,7 @@ zr_acr = {
         role_definition_name = "AcrPull"
       },
       "courtstranscribe-prod-mi-pull" = {
-        principal_id         = "084ddec5-6544-4701-a099-f1207b68e9eb"
+        principal_id         = "0cb0dcdc-fa2a-43f5-96bc-eef77860786e"
         role_definition_name = "AcrPull"
       },
 
