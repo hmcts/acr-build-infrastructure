@@ -19,6 +19,14 @@ sds_acr = {
         principal_id         = "446d9962-16af-444c-b72e-ce0f5a99999e"
         role_definition_name = "AcrPull"
       },
+      "sds-jenkins-ptlsbox-mi-pull" = {
+        principal_id         = "5356a0e7-324e-4efa-970b-4b4aec3f0ba3"
+        role_definition_name = "AcrPull"
+      },
+      "sds-jenkins-sbox-mi-pull" = {
+        principal_id         = "c445bc65-3550-421e-af0e-5ab8e8a06a79"
+        role_definition_name = "AcrPull"
+      },
     }
   }
 }
@@ -54,6 +62,18 @@ zr_acr = {
       },
       "sds-aks-sbox-mi-pull" = {
         principal_id         = "ba206872-8722-4375-bf4d-a28c39dff414"
+        role_definition_name = "AcrPull"
+      },
+      "cft-jenkins-sbox-mi-pull" = {
+        principal_id         = "e97a1e1d-0ae8-48b4-ae3a-49f8cdb44bfb"
+        role_definition_name = "AcrPull"
+      },
+      "sds-jenkins-ptlsbox-mi-pull" = {
+        principal_id         = "5356a0e7-324e-4efa-970b-4b4aec3f0ba3"
+        role_definition_name = "AcrPull"
+      },
+      "sds-jenkins-sbox-mi-pull" = {
+        principal_id         = "c445bc65-3550-421e-af0e-5ab8e8a06a79"
         role_definition_name = "AcrPull"
       },
       "jenkins-cftptl-intsvc-mi-contributor" = {
