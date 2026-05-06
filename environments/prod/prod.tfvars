@@ -46,6 +46,56 @@ zr_acr = {
         principal_id         = "7ef3b6ce-3974-41ab-8512-c3ef4bb8ae01"
         role_definition_name = "Contributor"
       },
+      # CFT Jenkins Environment Managed Identities
+      "cft-jenkins-aat-mi-pull" = {
+        principal_id         = "14b22215-46e6-48a9-8681-e8cefe66236a"
+        role_definition_name = "AcrPull"
+      },
+      "cft-jenkins-demo-mi-pull" = {
+        principal_id         = "75141362-5195-42fb-83f1-69225bb5250b"
+        role_definition_name = "AcrPull"
+      },
+      "cft-jenkins-ithc-mi-pull" = {
+        principal_id         = "22349922-a968-43b8-b5a5-1da0e57504c2"
+        role_definition_name = "AcrPull"
+      },
+      "cft-jenkins-perftest-mi-pull" = {
+        principal_id         = "531d44e7-5fe6-40cb-a390-ae1f36a23878"
+        role_definition_name = "AcrPull"
+      },
+      "cft-jenkins-preview-mi-pull" = {
+        principal_id         = "a289f989-29fd-46c0-a590-d4bb2be50d39"
+        role_definition_name = "AcrPull"
+      },
+      "cft-jenkins-prod-mi-pull" = {
+        principal_id         = "c860eaa0-74be-4731-8370-db94c5fdad81"
+        role_definition_name = "AcrPull"
+      },
+      # SDS Jenkins Environment Managed Identities
+      "sds-jenkins-demo-mi-pull" = {
+        principal_id         = "ab5aee91-f489-4532-933b-cbf5077b7020"
+        role_definition_name = "AcrPull"
+      },
+      "sds-jenkins-dev-mi-pull" = {
+        principal_id         = "d4271678-056e-4a35-8388-cbec28e84916"
+        role_definition_name = "AcrPull"
+      },
+      "sds-jenkins-ithc-mi-pull" = {
+        principal_id         = "abd08e6b-a3f9-4e29-aa71-60937b7cc66f"
+        role_definition_name = "AcrPull"
+      },
+      "sds-jenkins-prod-mi-pull" = {
+        principal_id         = "b7167d08-1908-410f-9f0d-ebfb93d248c9"
+        role_definition_name = "AcrPull"
+      },
+      "sds-jenkins-stg-mi-pull" = {
+        principal_id         = "df14f052-7865-49c6-b6f9-13e123dd8b66"
+        role_definition_name = "AcrPull"
+      },
+      "sds-jenkins-test-mi-pull" = {
+        principal_id         = "f6a4bf80-9fc3-41de-b81f-558d542452ad"
+        role_definition_name = "AcrPull"
+      },
       "hmctssbox-identity-pull" = {
         principal_id         = "7dee46ea-9b5b-4ce0-893d-56bd3619e270"
         role_definition_name = "AcrPull"
