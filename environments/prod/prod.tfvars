@@ -67,6 +67,10 @@ zr_acr = {
         principal_id         = "a289f989-29fd-46c0-a590-d4bb2be50d39"
         role_definition_name = "AcrPull"
       },
+      "cft-jenkins-preview-mi-contributor" = {
+        principal_id         = "a289f989-29fd-46c0-a590-d4bb2be50d39"
+        role_definition_name = "Contributor"
+      },
       "cft-jenkins-prod-mi-pull" = {
         principal_id         = "c860eaa0-74be-4731-8370-db94c5fdad81"
         role_definition_name = "AcrPull"
@@ -79,6 +83,10 @@ zr_acr = {
       "sds-jenkins-dev-mi-pull" = {
         principal_id         = "d4271678-056e-4a35-8388-cbec28e84916"
         role_definition_name = "AcrPull"
+      },
+      "sds-jenkins-dev-mi-contributor" = {
+        principal_id         = "d4271678-056e-4a35-8388-cbec28e84916"
+        role_definition_name = "Contributor"
       },
       "sds-jenkins-ithc-mi-pull" = {
         principal_id         = "abd08e6b-a3f9-4e29-aa71-60937b7cc66f"
