@@ -50,6 +50,14 @@ zr_acr = {
         principal_id         = "ca6d5085-485a-417d-8480-c3cefa29df31"
         role_definition_name = "Managed Identity Operator"
       },
+      "cft-jenkins-sbox-mi-operator" = {
+        principal_id         = "e97a1e1d-0ae8-48b4-ae3a-49f8cdb44bfb"
+        role_definition_name = "Managed Identity Operator"
+      },
+      "sds-jenkins-sbox-mi-operator" = {
+        principal_id         = "c445bc65-3550-421e-af0e-5ab8e8a06a79"
+        role_definition_name = "Managed Identity Operator"
+      },
     }
     role_assignments = {
       "hmctssbox-identity-contributor" = {
@@ -75,6 +83,14 @@ zr_acr = {
       "sds-jenkins-sbox-mi-pull" = {
         principal_id         = "c445bc65-3550-421e-af0e-5ab8e8a06a79"
         role_definition_name = "AcrPull"
+      },
+      "cft-jenkins-sbox-mi-contributor" = {
+        principal_id         = "e97a1e1d-0ae8-48b4-ae3a-49f8cdb44bfb"
+        role_definition_name = "Contributor"
+      },
+      "sds-jenkins-sbox-mi-contributor" = {
+        principal_id         = "c445bc65-3550-421e-af0e-5ab8e8a06a79"
+        role_definition_name = "Contributor"
       },
       "jenkins-cftptl-intsvc-mi-contributor" = {
         principal_id         = "ca6d5085-485a-417d-8480-c3cefa29df31"
