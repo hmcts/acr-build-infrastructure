@@ -169,6 +169,10 @@ zr_acr = {
         principal_id         = "0cb0dcdc-fa2a-43f5-96bc-eef77860786e"
         role_definition_name = "AcrPull"
       },
+      "batch-transcription-frontend-dev-mi-pull" = {
+        principal_id         = "c042eb86-ae96-41ff-9bc3-d71245c60e6d"
+        role_definition_name = "AcrPull"
+      },
       "batch-transcription-dev-mi-pull" = {
         principal_id         = "5182e7fb-b123-4c1d-8920-3571a9b09db8"
         role_definition_name = "AcrPull"
