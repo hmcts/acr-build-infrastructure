@@ -181,6 +181,10 @@ zr_acr = {
         principal_id         = "fa435025-9f89-420e-9c40-e78618734329"
         role_definition_name = "AcrPull"
       },
+      "batch-transcription-frontend-stg-mi-pull" = {
+        principal_id         = "cd788c7e-1615-4f4c-92cd-f72c52d1c3ce"
+        role_definition_name = "AcrPull"
+      },
 
       # SDS AKS Source Controller Identities
       "sds-aks-demo-mi-pull" = {
