@@ -79,6 +79,10 @@ zr_acr = {
         principal_id         = "c860eaa0-74be-4731-8370-db94c5fdad81"
         role_definition_name = "AcrPull"
       },
+      "cft-jenkins-ptl-mi-pull" = {
+        principal_id         = "ca6d5085-485a-417d-8480-c3cefa29df31"
+        role_definition_name = "AcrPull"
+      },
       # SDS Jenkins Environment Managed Identities
       "sds-jenkins-demo-mi-pull" = {
         principal_id         = "ab5aee91-f489-4532-933b-cbf5077b7020"
