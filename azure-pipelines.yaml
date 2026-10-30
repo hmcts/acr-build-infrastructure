@@ -29,21 +29,21 @@ parameters:
       - deployment: "sds_sbox_acr"
         environment: "sbox"
         component: "sds_acr"
-        service_connection: "DTS-SBOX-WIF"
+        service_connection: "DTS-SHAREDSERVICES-SBOX-WIF"
         product: "sds-platform"
         dependsOn: "Precheck"
 
       - deployment: "cft_sbox_acr"
         environment: "sbox"
         component: "cft_acr"
-        service_connection: "DTS-SBOX-WIF"
+        service_connection: "DTS-SHAREDSERVICES-SBOX-WIF"
         product: "cft-platform"
         dependsOn: "Precheck"
 
       - deployment: "zr_sbox_acr"
         environment: "sbox"
         component: "zr_acr"
-        service_connection: "DTS-SBOX-WIF"
+        service_connection: "DTS-SHAREDSERVICES-SBOX-WIF"
         product: "cft-platform"
         dependsOn: "Precheck"
 
@@ -91,7 +91,7 @@ stages:
             parameters:
               keyvaultName: "infra-vault-nonprod"
               keyvaultSecret: "azure-devops-sp-token"
-              serviceConnection: "DCD-CFT-Sandbox-WIF"
+              serviceConnection: "DCD-CFT-Sandbox"
               overrideAction: ${{ parameters.overrideAction }}
 
   - ${{ each deployment in parameters.environment_components }}:
