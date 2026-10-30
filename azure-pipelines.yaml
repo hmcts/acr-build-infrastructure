@@ -29,42 +29,42 @@ parameters:
       - deployment: "sds_sbox_acr"
         environment: "sbox"
         component: "sds_acr"
-        service_connection: "OPS-APPROVAL-GATE-SBOX-ENVS"
+        service_connection: "DTS-SBOX-WIF"
         product: "sds-platform"
         dependsOn: "Precheck"
 
       - deployment: "cft_sbox_acr"
         environment: "sbox"
         component: "cft_acr"
-        service_connection: "OPS-APPROVAL-GATE-SBOX-ENVS"
+        service_connection: "DTS-SBOX-WIF"
         product: "cft-platform"
         dependsOn: "Precheck"
 
       - deployment: "zr_sbox_acr"
         environment: "sbox"
         component: "zr_acr"
-        service_connection: "OPS-APPROVAL-GATE-SBOX-ENVS"
+        service_connection: "DTS-SBOX-WIF"
         product: "cft-platform"
         dependsOn: "Precheck"
 
       - deployment: "sds_prod_acr"
         environment: "prod"
         component: "sds_acr"
-        service_connection: "OPS-APPROVAL-GATE-PROD-ENVS"
+        service_connection: "DTS-SHAREDSERVICES-PROD-WIF"
         product: "sds-platform"
         dependsOn: "precheck"
 
       - deployment: "cft_prod_acr"
         environment: "prod"
         component: "cft_acr"
-        service_connection: "OPS-APPROVAL-GATE-PROD-ENVS"
+        service_connection: "DTS-SHAREDSERVICES-PROD-WIF"
         product: "cft-platform"
         dependsOn: "precheck"
 
       - deployment: "zr_prod_acr"
         environment: "prod"
         component: "zr_acr"
-        service_connection: "OPS-APPROVAL-GATE-PROD-ENVS"
+        service_connection: "DTS-SHAREDSERVICES-PROD-WIF"
         product: "cft-platform"
         dependsOn: "Precheck"
 
@@ -91,7 +91,7 @@ stages:
             parameters:
               keyvaultName: "infra-vault-nonprod"
               keyvaultSecret: "azure-devops-sp-token"
-              serviceConnection: "DCD-CFT-Sandbox"
+              serviceConnection: "DCD-CFT-Sandbox-WIF"
               overrideAction: ${{ parameters.overrideAction }}
 
   - ${{ each deployment in parameters.environment_components }}:
