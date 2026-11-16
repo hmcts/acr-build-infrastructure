@@ -212,7 +212,7 @@ zr_acr = {
         role_definition_name = "AcrPull"
       },
       "sds-aks-ptlsbox-mi-pull" = {
-        principal_id         = "d864b3ca-238c-474a-a426-6e526207cf4a"
+        principal_id         = "6bb25098-e061-48d9-9b30-8c3743f74dca"
         role_definition_name = "AcrPull"
       },
       "sds-aks-stg-mi-pull" = {
